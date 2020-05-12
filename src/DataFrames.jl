@@ -7,6 +7,7 @@ using Base.Sort, Base.Order, Base.Iterators
 using TableTraits, IteratorInterfaceExtensions
 import LinearAlgebra: norm
 using Markdown
+using Base.Threads
 
 import DataAPI,
        DataAPI.All,
@@ -86,6 +87,8 @@ else
     import Compat.only
     export only
 end
+
+const NTHREADS = 1
 
 include("other/utils.jl")
 include("other/index.jl")
